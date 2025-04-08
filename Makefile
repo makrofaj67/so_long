@@ -49,9 +49,6 @@ $(NAME_BONUS): $(BONUS_OBJS) $(STATIC_LIBS) | $(BUILD_DIR)
 	@$(CC) $(CFLAGS) $(BONUS_OBJS) $(STATIC_LIBS) $(MLX_FLAGS) -o $(NAME_BONUS)
 	@echo "$(NAME_BONUS) derlendi."
 
-start: all
-	@$(NAME)
-
 clean:
 	@rm -f $(OBJS) $(BONUS_OBJS)
 	@$(MAKE) -sC $(LIB_DIR)/libft clean
@@ -70,5 +67,8 @@ fclean: clean
 	@echo "Programlar, obje dosyaları, kütüphaneler ve build dizini temizlendi."
 
 re: fclean all
+
+dev: all clean
+	@$(NAME)
 
 .PHONY: all bonus clean fclean re start
