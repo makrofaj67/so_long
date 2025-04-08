@@ -33,7 +33,7 @@ char	*hl_get_preproc_line(char *remainder, int fd)
 			return (NULL);
 		}
 		buffer[readed_bytes] = '\0';
-		remainder = ft_strjoin(remainder, buffer);
+		remainder = ft_strjoinx(remainder, buffer);
 	}
 	free(buffer);
 	return (remainder);

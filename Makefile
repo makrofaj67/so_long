@@ -10,9 +10,8 @@ BONUS_INCLUDES_DIR = ./mandatory/bonus/include
 
 NAME_LIBPRINTFT = $(LIB_DIR)/ft_printf/libftprintf.a
 NAME_GETNEXTLINE = $(LIB_DIR)/get_next_line/getnextline.a
-NAME_LIBFT = $(LIB_DIR)/libft/libft.a
 NAME_MINILIBX = $(LIB_DIR)/minilibx-linux/libmlx_Linux.a
-STATIC_LIBS = $(NAME_LIBPRINTFT) $(NAME_GETNEXTLINE) $(NAME_LIBFT) $(NAME_MINILIBX)
+STATIC_LIBS = $(NAME_LIBPRINTFT) $(NAME_GETNEXTLINE) $(NAME_MINILIBX)
 
 CC = gcc
 CFLAGS =
@@ -28,9 +27,6 @@ bonus: $(NAME_BONUS)
 
 $(BUILD_DIR):
 	@mkdir -p $(BUILD_DIR)
-
-$(NAME_LIBFT):
-	@$(MAKE) -sC $(LIB_DIR)/libft all
 
 $(NAME_GETNEXTLINE):
 	@$(MAKE) -sC $(LIB_DIR)/get_next_line all
@@ -51,7 +47,6 @@ $(NAME_BONUS): $(BONUS_OBJS) $(STATIC_LIBS) | $(BUILD_DIR)
 
 clean:
 	@rm -f $(OBJS) $(BONUS_OBJS)
-	@$(MAKE) -sC $(LIB_DIR)/libft clean
 	@$(MAKE) -sC $(LIB_DIR)/ft_printf clean
 	@$(MAKE) -sC $(LIB_DIR)/get_next_line clean
 	@$(MAKE) -sC $(LIB_DIR)/minilibx-linux clean
@@ -60,7 +55,6 @@ clean:
 fclean: clean
 	@rm -f $(NAME) $(NAME_BONUS)
 	@rm -f $(NAME_MINILIBX)
-	@$(MAKE) -sC $(LIB_DIR)/libft fclean
 	@$(MAKE) -sC $(LIB_DIR)/ft_printf fclean
 	@$(MAKE) -sC $(LIB_DIR)/get_next_line fclean
 	@rm -rf $(BUILD_DIR)

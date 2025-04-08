@@ -22,8 +22,8 @@
 
 char	*get_next_line(int fd);
 char	*ft_strdup(const char *s1);
-char	*ft_strjoin(char *s1, char *s2);
-int		ft_strlen(const char *str);
+char	*ft_strjoinx(char *s1, char *s2);
+int		ft_strlenx(const char *str);
 int		hl_has_newline(const char *str);
 
 #endif
