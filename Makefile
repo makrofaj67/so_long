@@ -14,7 +14,7 @@ NAME_MINILIBX = $(LIB_DIR)/minilibx-linux/libmlx_Linux.a
 STATIC_LIBS = $(NAME_LIBPRINTFT) $(NAME_GETNEXTLINE) $(NAME_MINILIBX)
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = 
 MLX_FLAGS = -I$(LIB_DIR)/minilibx-linux -L$(LIB_DIR)/minilibx-linux -lmlx -lX11 -lXext -lm
 
 SRCS = $(shell find $(SRCS_DIR) -type f -name '*.c')
@@ -49,10 +49,10 @@ $(NAME_BONUS): $(BONUS_OBJS) $(STATIC_LIBS) | $(BUILD_DIR)
 $(BUILD_DIR)/%.o: $(SRCS_DIR)/%.c | $(BUILD_DIR)
 	@echo "Compiling $< -> $@"
 	@$(CC) $(CFLAGS) -I$(INCLUDES_DIR) -I$(BONUS_INCLUDES_DIR) -I$(LIB_DIR)/minilibx-linux -c $< -o $@
-
 $(BUILD_DIR)/%.o: $(BONUS_SRCS_DIR)/%.c | $(BUILD_DIR)
 	@echo "Compiling $< -> $@"
 	@$(CC) $(CFLAGS) -I$(INCLUDES_DIR) -I$(BONUS_INCLUDES_DIR) -I$(LIB_DIR)/minilibx-linux -c $< -o $@
+
 
 clean:
 	@rm -f $(OBJS) $(BONUS_OBJS)
@@ -74,4 +74,4 @@ re: fclean all
 dev: all clean
 	@$(NAME)
 
-.PHONY: all bonus clean fclean re start dev
+.PHONY: all bonus clean fclean re start
