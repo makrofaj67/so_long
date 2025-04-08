@@ -17,9 +17,4 @@
 #include "../../lib/get_next_line/get_next_line.h"
 #include "../../lib/ft_printf/printf/ft_printf.h"
 
-#include <fcntl.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-
 #endif
