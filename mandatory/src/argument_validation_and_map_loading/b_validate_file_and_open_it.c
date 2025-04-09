@@ -6,7 +6,7 @@
 /*   By: rakman <rakman@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 13:33:56 by rakman            #+#    #+#             */
-/*   Updated: 2025/04/09 15:06:41 by rakman           ###   ########.fr       */
+/*   Updated: 2025/04/09 16:19:24 by rakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ t_map_error check_reach_and_emptiness(const char *file_name, int *fd_out)
         close(fd);
         return (ERR_FILE_READ);
     }
-*fd_out = fd;
+	*fd_out = fd;
     return (MAP_SUCCESS);
 }
 
@@ -54,7 +54,7 @@ t_map_error check_extension(const char *file_name)
 		return (ERR_ARGS_EXT);
 }
 
-t_map_error validate_file(const char *file_name, int *out_fd)
+t_map_error validate_file_and_open(const char *file_name, int *out_fd)
 {
 	t_map_error status;
 

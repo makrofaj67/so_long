@@ -6,7 +6,7 @@
 /*   By: rakman <rakman@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 05:46:36 by rakman            #+#    #+#             */
-/*   Updated: 2025/04/09 14:57:24 by rakman           ###   ########.fr       */
+/*   Updated: 2025/04/09 15:57:13 by rakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 typedef enum e_map_error {
     MAP_SUCCESS = 0,     // 0: Başarı (Hata yok)
 
-	FILE_NAME_NULL,
     // --- 1. Argüman ve Dosya Adı Kontrolleri ---
     ERR_ARGS_COUNT,      // 1: Yanlış sayıda argüman verildi.
     ERR_ARGS_EXT,        // 2: Dosya adı '.ber' uzantılı değil.
@@ -42,9 +41,21 @@ typedef enum e_map_error {
 
 } t_map_error;
 
-typedef struct hl_y {
-	void *mlx;
-	void *win_ptr;
-} hl_x;
+
+
+typedef struct s_map {
+	char **grid;
+	int width;
+	int height;
+	int player_start_x;
+	int player_start_y;
+	int collectible_total;
+	int exit_x;
+	int exit_y;
+} t_map;
+
+typedef struct s_game {
+	t_map map;
+} t_game;
 
 #endif
