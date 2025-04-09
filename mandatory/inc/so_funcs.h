@@ -6,7 +6,7 @@
 /*   By: rakman <rakman@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 05:44:24 by rakman            #+#    #+#             */
-/*   Updated: 2025/04/09 00:12:22 by rakman           ###   ########.fr       */
+/*   Updated: 2025/04/09 15:06:27 by rakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,24 @@
 #define SO_FUNCS_H
 #include "so_structs.h"
 
-t_map_error validate_map(int argc, char *argv[]);
-void error_exit(t_map_error error_code);
-int check_extension(const char *file_name);
-int check_file_reach(const char *file_name);
-int is_file_empty(const char *file_name);
+t_map_error validate_argument(int argc, char *argv[]);
+
+t_map_error validate_file(const char *file_name, int *out_fd);
+t_map_error check_extension(const char *file_name);
+t_map_error check_reach_and_emptiness(const char *file_name, int *fd_out)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #endif
 

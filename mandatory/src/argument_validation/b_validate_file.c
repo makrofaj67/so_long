@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   b_file_validation.c                                :+:      :+:    :+:   */
+/*   b_validate_file.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rakman <rakman@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 13:33:56 by rakman            #+#    #+#             */
-/*   Updated: 2025/04/09 15:00:48 by rakman           ###   ########.fr       */
+/*   Updated: 2025/04/09 15:06:41 by rakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/so_long.h"
 
-t_map_error check_open_and_emptiness(const char *file_name, int *fd_out)
+t_map_error check_reach_and_emptiness(const char *file_name, int *fd_out)
 {
     int     fd;
     char    buffer[1];
@@ -34,7 +34,7 @@ t_map_error check_open_and_emptiness(const char *file_name, int *fd_out)
         close(fd);
         return (ERR_FILE_READ);
     }
-    *fd_out = fd;
+*fd_out = fd;
     return (MAP_SUCCESS);
 }
 
@@ -54,13 +54,13 @@ t_map_error check_extension(const char *file_name)
 		return (ERR_ARGS_EXT);
 }
 
-t_map_error validate_map(const char *file_name, int *out_fd)
+t_map_error validate_file(const char *file_name, int *out_fd)
 {
 	t_map_error status;
 
 	status = check_extension(file_name);
 	if (status != MAP_SUCESS)
 		return (status);
-	status = check_open_and_emptiness(file_name, out_fd);
+	status = check_reach_and_emptiness(file_name, out_fd);
 	return (status);
 }

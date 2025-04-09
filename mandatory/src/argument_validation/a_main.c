@@ -6,13 +6,13 @@
 /*   By: rakman <rakman@student.42istanbul.com.tr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 14:56:49 by rakman            #+#    #+#             */
-/*   Updated: 2025/04/09 14:56:52 by rakman           ###   ########.fr       */
+/*   Updated: 2025/04/09 15:02:08 by rakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/so_long.h"
 
-t_map_error validate_map(int argc, const char *argv[], t_game *game)
+t_map_error validate_argument(int argc, const char *argv[], t_game *game)
 {
 	t_map_error status;
 	int fd_out;
@@ -25,7 +25,7 @@ t_map_error validate_map(int argc, const char *argv[], t_game *game)
 	if (status != MAP_SUCCESS)
 		return (status);
 	
-	status = map
+	status = validate_map_struct(t_map *map)
 
 	return (MAP_SUCCESS);
 }
