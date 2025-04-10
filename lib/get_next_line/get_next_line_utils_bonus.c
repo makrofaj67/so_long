@@ -6,7 +6,7 @@
 /*   By: rakman <rakman@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 09:37:09 by rakman            #+#    #+#             */
-/*   Updated: 2025/01/18 18:21:06 by rakman           ###   ########.fr       */
+/*   Updated: 2025/04/10 10:11:04 by rakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_strlenx(const char *str)
 	return (i);
 }
 
-char	*ft_strdup(const char *s1)
+char	*ft_strdupx(const char *s1)
 {
 	char	*dup;
 	int		i;

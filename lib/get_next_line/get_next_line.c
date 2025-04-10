@@ -6,7 +6,7 @@
 /*   By: rakman <rakman@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 09:19:12 by rakman            #+#    #+#             */
-/*   Updated: 2025/01/18 18:23:44 by rakman           ###   ########.fr       */
+/*   Updated: 2025/04/10 10:10:24 by rakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ char	*hl_calculate_remainder(char *str)
 		i++;
 	if (str[i] == '\0')
 		return (NULL);
-	remainder = ft_strdup(&str[i + 1]);
+	remainder = ft_strdupx(&str[i + 1]);
 	return (remainder);
 }
 

@@ -6,7 +6,7 @@
 /*   By: rakman <rakman@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 09:21:01 by rakman            #+#    #+#             */
-/*   Updated: 2025/01/18 18:22:16 by rakman           ###   ########.fr       */
+/*   Updated: 2025/04/10 10:10:12 by rakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # endif
 
 char	*get_next_line(int fd);
-char	*ft_strdup(const char *s1);
+char	*ft_strdupx(const char *s1);
 char	*ft_strjoinx(char *s1, char *s2);
 int		ft_strlenx(const char *str);
 int		hl_has_newline(const char *str);

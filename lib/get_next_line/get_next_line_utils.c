@@ -6,7 +6,7 @@
 /*   By: rakman <rakman@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 09:37:09 by rakman            #+#    #+#             */
-/*   Updated: 2025/01/18 18:21:38 by rakman           ###   ########.fr       */
+/*   Updated: 2025/04/10 10:12:43 by rakman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_strlenx(const char *str)
 	return (i);
 }
 
-char	*ft_strdup(const char *s1)
+char	*ft_strdupx(const char *s1)
 {
 	char	*dup;
 	int		i;
@@ -53,7 +53,7 @@ char	*ft_strjoinx(char *s1, char *s2)
 	if (s2 == NULL)
 		return (s1);
 	if (s1 == NULL)
-		return (ft_strdup(s2));
+		return (ft_strdupx(s2));
 	str = malloc(sizeof(char) * (ft_strlenx(s1) + ft_strlenx(s2) + 1));
 	if (!str)
 	{
